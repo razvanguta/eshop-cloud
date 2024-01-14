@@ -1,0 +1,18 @@
+services:
+
+  mysql_db:
+    image: "mysql:8.0"
+    restart: always
+    ports:
+      - 3307:3307
+    expose:
+      - 3307
+    environment:
+      MYSQL_DATABASE: onlineshop1
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_TCP_PORT: 3307
+    volumes:
+      - ./mysql_home:/var/lib/mysql
+      - ./initDB.sql:/docker-entrypoint-initdb.d/initDB.sql
