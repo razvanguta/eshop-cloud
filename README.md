@@ -12,3 +12,5 @@ Microservices:
 -> payment-service that provides an interface for the payment process
 
 -> order-service that provides an interface for the order management
+
+docker-compose up -d
